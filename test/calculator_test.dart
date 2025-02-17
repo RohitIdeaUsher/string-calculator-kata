@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:string_calculator_kata/string_calulator_kata.dart';
+import 'package:string_calculator_kata/calculator.dart';
 
 void main() {
   late Calculator calculator;
