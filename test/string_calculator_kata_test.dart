@@ -24,5 +24,10 @@ void main() {
       final results = calculator.add(userInput: userInput);
       expect(results, 10);
     });
+    test('handles new line as a delimiter', () {
+      String userInput = "9\n5,6";
+      final results = calculator.add(userInput: userInput);
+      expect(results, 20);
+    });
   });
 }
