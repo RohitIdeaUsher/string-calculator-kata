@@ -35,5 +35,10 @@ void main() {
       final results = calculator.add(userInput: userInput);
       expect(results, 3);
     });
+    test('handles negative numbers', () {
+      String userInput = "-1,-3";
+      final results = calculator.add(userInput: userInput);
+      expect(results, throwsA(isA<ArgumentError>()));
+    });
   });
 }

@@ -9,10 +9,11 @@ class Calculator {
       delimiter = Regex.customDelimiter(parts[0].substring(2));
       userInput = parts[1];
     }
+    List<int?> result = userInput.split(delimiter).map(int.tryParse).toList();
+    if (result.isNotEmpty) {
+      throw ArgumentError("Negatives not allowed: ${result.join(', ')}");
+    }
 
-    return userInput
-        .split(delimiter)
-        .map(int.tryParse)
-        .reduce((a, b) => (a ?? 0) + (b ?? 0));
+    return result.fold(0, (sum, number) => (sum ?? 0) + (number ?? 0));
   }
 }
