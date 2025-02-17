@@ -12,5 +12,17 @@ void main() {
       final results = calculator.add(userInput: userInput);
       expect(results, 0);
     });
+
+    test('returns number itself when single number is provided', () {
+      String userInput = "1";
+      final results = calculator.add(userInput: userInput);
+      expect(results, 1);
+    });
+
+    test('returns sum when multiple numbers are provided', () {
+      String userInput = "3,7";
+      final results = calculator.add(userInput: userInput);
+      expect(results, 10);
+    });
   });
 }

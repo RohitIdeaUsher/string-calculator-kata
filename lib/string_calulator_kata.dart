@@ -1,6 +1,9 @@
 class Calculator {
   int? add({required String userInput}) {
     if (userInput.isEmpty) return 0;
-    return int.tryParse(userInput);
+    return userInput
+        .split(",")
+        .map(int.parse)
+        .reduce((previous, next) => previous + next);
   }
 }
