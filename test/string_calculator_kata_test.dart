@@ -29,5 +29,11 @@ void main() {
       final results = calculator.add(userInput: userInput);
       expect(results, 20);
     });
+
+    test('handles multiple delimiters', () {
+      String userInput = "//;\n1;2";
+      final results = calculator.add(userInput: userInput);
+      expect(results, 3);
+    });
   });
 }
